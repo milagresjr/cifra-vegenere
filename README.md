@@ -1,10 +1,8 @@
-# Cifra Vigenère - UI (Design-only)
+# Cifra Vigenère
 
 
 Projeto Vite + React com TailwindCSS e Framer Motion.
-Este repositório contém apenas a camada de interface (design) — a lógica de cifrar/decifrar não está implementada neste scaffold.
-
-
+Este repositório contém apenas a camada de interface (design) e a lógica de cifrar/decifrar usando o metodo de Vigenere.
 
 
 // USAGE
