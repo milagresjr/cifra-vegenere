@@ -8,7 +8,9 @@ import { CifrarMensagem } from '../service/service'
 export const Cifrar = () => {
     const [texto, setTexto] = useState('')
     const [chave, setChave] = useState('')
-    const [resultado, setResultado] = useState<string | null>(null)
+    const [resultado, setResultado] = useState<string | null>(null);
+
+    const [copying, setCopying] = useState(false);
 
     const handleChangeTexto = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         // Remove tudo que não for letra e transforma em maiúscula
@@ -25,9 +27,16 @@ export const Cifrar = () => {
     const onCifrar = () => {
         const txtCifrado = CifrarMensagem(texto, chave);
         // lógica ficará por implementar - por agora apenas mostraremos um mock estilizado
-        setResultado(texto ? `🔒 ${txtCifrado}`:'');
+        setResultado(texto ? `🔒 ${txtCifrado}` : '');
     }
 
+    function handleCopy() {
+        if (resultado) {
+            setCopying(true);
+            navigator.clipboard.writeText(resultado);
+            setTimeout(() => setCopying(false), 2000);
+        }
+    }
 
     return (
         <div className="max-w-3xl mx-auto space-y-6">
@@ -70,8 +79,11 @@ export const Cifrar = () => {
 
 
                         <div className="flex justify-end mt-4">
-                            <button className="inline-flex items-center gap-2 px-3 py-2 rounded-md border" title="Copiar">
-                                <Copy size={16} /> Copiar
+                            <button
+                                onClick={handleCopy}
+                                className="inline-flex cursor-pointer items-center gap-2 px-3 py-2 rounded-md border" title="Copiar">
+                                <Copy size={16} /> 
+                                {copying ? 'Copiado!' : 'Copiar'}
                             </button>
                         </div>
                     </motion.div>
