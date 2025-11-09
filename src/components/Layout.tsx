@@ -70,7 +70,7 @@ export const Layout = ({ children }: LayoutProps) => {
 
             {/* Footer */}
             <footer className="container mx-auto p-6 text-center text-sm text-slate-500 dark:text-slate-400">
-                © {new Date().getFullYear()} — Ferramenta de demonstração (design-only)
+                © {new Date().getFullYear()} — Cifra de Vigenère. Desenvolvido por Milagres Jr.
             </footer>
         </div>
     )

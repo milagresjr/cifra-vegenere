@@ -22,7 +22,8 @@ export const Home = () => {
                     transition={{ delay: 0.2 }}
                     className="text-slate-600 dark:text-slate-300 max-w-xl"
                 >
-                    Experimente cifrar e decifrar mensagens com uma interface simples e bonita. Selecione uma ação abaixo para começar.
+                    Experimente cifrar e decifrar mensagens ou textos com uma interface simples e elegante. <br />
+                    <span className='text-lg font-semibold'> Selecione uma ação abaixo para começar.</span>
                 </motion.p>
 
 
@@ -48,7 +49,7 @@ export const Home = () => {
                 <motion.h3 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="text-lg font-semibold mb-3">Como funciona (visão)</motion.h3>
                 <ol className="list-decimal pl-5 text-slate-600 dark:text-slate-300 space-y-2">
                     <li>Forneça um texto e uma chave.</li>
-                    <li>Clique em Cifrar para gerar o texto secreto.</li>
+                    <li>Clique em Cifrar para gerar o texto cifrado.</li>
                     <li>Use Decifrar com a chave correta para recuperar o texto original.</li>
                 </ol>
             </aside>
